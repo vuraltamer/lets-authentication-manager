@@ -68,6 +68,20 @@ A modular authentication starter for Spring Boot applications, supporting `Redis
         return new BCryptPasswordEncoder();
     }
 
+**implementation**
+
+    public class AuthenticationDetailServiceImpl implements AuthenticationDetailService {
+        TODO
+    }
+
+    public class AuthenticationUserFetchServiceImpl implements AuthenticationUserFetchService {
+        TODO
+    }
+
+    public class GoogleAuthenticationUserInitServiceImpl implements GoogleAuthenticationUserFetchService {
+        TODO : optional usage
+    }
+
 ### Maven
 
 ```xml
