@@ -46,10 +46,10 @@ A modular authentication starter for Spring Boot applications, supporting `Redis
 
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http,
-    AuthenticationDetailServiceImpl userDetailService,
-    GoogleAuthenticationProvider googleAuthenticationProvider) throws Exception {
+        AuthenticationDetailServiceImpl userDetailService,
+        GoogleAuthenticationProvider googleAuthenticationProvider) throws Exception {
 
-    return http.getSharedObject(AuthenticationManagerBuilder.class)
+        return http.getSharedObject(AuthenticationManagerBuilder.class)
             .authenticationProvider(daoAuthenticationProvider(userDetailService))
             .authenticationProvider(googleAuthenticationProvider)
             .build();
@@ -57,15 +57,15 @@ A modular authentication starter for Spring Boot applications, supporting `Redis
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider(AuthenticationDetailServiceImpl userDetailsService) {
-    DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-    authProvider.setUserDetailsService(userDetailsService);
-    authProvider.setPasswordEncoder(passwordEncoder());
-    return authProvider;
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        return authProvider;
     }
     
     @Bean
     public PasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
 
 ### Maven
