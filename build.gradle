@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'io.github.lets.apis.authentication'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 
 java {
     toolchain {
@@ -58,10 +58,10 @@ dependencies {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact("build/libs/lets-authentication-manager-0.0.1-SNAPSHOT-plain.jar")
+            from components.java
             groupId = "io.github.lets.apis"
             artifactId = "lets-authentication-manager"
-            version = "1.0.0"
+            version = project.version
         }
     }
     repositories {
