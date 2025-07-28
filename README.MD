@@ -19,7 +19,7 @@ A modular authentication starter for Spring Boot applications, supporting `Redis
 
 ## ⚙️ Installation
 
-- yml configuration
+**yml configuration**
 
 
     lets:
@@ -41,7 +41,7 @@ A modular authentication starter for Spring Boot applications, supporting `Redis
                     user-detail: 864000   # 10d
 
 
-- Bean Definition
+**Bean Definition**
 
 
     @Bean
