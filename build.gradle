@@ -61,13 +61,13 @@ publishing {
             artifact("build/libs/lets-authentication-manager-0.0.1-SNAPSHOT-plain.jar")
             groupId = "io.github.lets.apis"
             artifactId = "lets-authentication-manager"
-            version = "1.0.6"
+            version = "1.0.0"
         }
     }
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/vuraltamer/tefeb-packages")
+            url = uri("https://maven.pkg.github.com/vuraltamer/lets-authentication-manager")
             credentials {
                 username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
                 password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
