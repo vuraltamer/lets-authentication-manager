@@ -21,7 +21,7 @@ A modular authentication starter for Spring Boot applications, supporting `Redis
 
 **yml configuration**
 
-
+```yml
     lets:
         apis:
             authentication:
@@ -39,16 +39,15 @@ A modular authentication starter for Spring Boot applications, supporting `Redis
                     access-token: 7200    # 2h
                     refresh-token: 86400  # 24h
                     user-detail: 864000   # 10d
-
+```
 
 **Bean Definition**
 
-
+```java
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http,
-        AuthenticationDetailServiceImpl userDetailService,
-        GoogleAuthenticationProvider googleAuthenticationProvider) throws Exception {
-
+            AuthenticationDetailServiceImpl userDetailService,
+            GoogleAuthenticationProvider googleAuthenticationProvider) throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class)
             .authenticationProvider(daoAuthenticationProvider(userDetailService))
             .authenticationProvider(googleAuthenticationProvider)
@@ -67,21 +66,21 @@ A modular authentication starter for Spring Boot applications, supporting `Redis
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
+```
 **implementation**
-
+```java
     public class AuthenticationDetailServiceImpl implements AuthenticationDetailService {
-        TODO
+        // TODO
     }
 
     public class AuthenticationUserFetchServiceImpl implements AuthenticationUserFetchService {
-        TODO
+        // TODO
     }
 
     public class GoogleAuthenticationUserInitServiceImpl implements GoogleAuthenticationUserFetchService {
-        TODO : optional usage
+        // TODO : optional usage
     }
-
+```   
 ### Maven
 
 ```xml
